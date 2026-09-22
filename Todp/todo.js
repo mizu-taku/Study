@@ -1,6 +1,8 @@
 // HTMLの要素（文字とボタン）をJavascript側で取得して変数に入れる
 const resultText = document.getElementById('result');
 const drawButton = document.getElementById('draw-btn');
+//追加
+const luckyItemText = document.getElementById('lucky-item');
 
 // ボタンが「クリック(click)」されたら、波括弧 {} の中身を実行する
 drawButton.addEventListener('click', function () {
@@ -24,4 +26,22 @@ drawButton.addEventListener('click', function () {
   } else {
     resultText.style.color = 'black';
   }
+
+  //追加 ラッキーアイテムの処理
+  const items = [
+    '赤いペン',
+    '五円玉',
+    'お気に入りの靴',
+    'コーヒー',
+    'ハンカチ',
+  ];
+  const randomItemNum = Math.floor(Math.randomu() * items.length);
+  const todayItem = items[randomItemNum];
+
+  //文字同士を[+]でくっつけ表示する
+  luckyItemText.textContent = 'ラッキーアイテム' + todayItem;
+
+  //ボタンを無効化する処理
+  drawButton.disabled = true;
+  drawButton.textContent = '今日はもう引けない';
 });
