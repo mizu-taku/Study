@@ -10,8 +10,11 @@ body {
   max-width: 100%;
   font-size: 1.5rem;
   padding:1rem;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 }
 #count {
   font-size: 1.5rem;
+}
+.alert {
+  color: #f66;
 }
